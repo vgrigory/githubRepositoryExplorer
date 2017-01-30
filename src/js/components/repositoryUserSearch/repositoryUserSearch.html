@@ -1,0 +1,33 @@
+<div class="row">
+    <ui-select ng-model="$ctrl.selectedUser"
+        ng-model-options="{debounce: 400}"
+        theme="bootstrap"
+        class="col-sm-5"
+        title="Start typing a username"
+        reset-search-input="false"
+    >
+        <ui-select-match placeholder="Enter a username...">
+            {{$select.selected.login}}
+        </ui-select-match>
+        <ui-select-choices repeat="user in repositoryUsers track by $index"
+            refresh="searchUser($select.search)"
+            refresh-delay="0"
+            minimum-input-length="3"
+            ng-click="selectUser($select.selected.login)"
+        >
+            <div ng-bind-html="user.login | highlight: $select.search"></div>
+        </ui-select-choices>
+    </ui-select>
+</div>
+
+<div class="alert alert-danger alert-dismissible fade in pull-right col-sm-3"
+    role="alert"
+    ng-show="error"
+    ng-click="error = ''"
+    style=""
+>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    {{error}}
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="RepositoryExplorer">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>GitHub repository explorer</title>
+
+        <!-- [lib/vendor/third party] styles -->
+        <link rel="stylesheet" type="text/css" href="../node_modules/jasmine-core/lib/jasmine-core/jasmine.css" />
+        <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../node_modules/ui-select/dist/select.min.css" />
+
+        <!-- [project] styles -->
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <h1>GitHub repository explorer</h1>
+
+            <repository-user-search template-url="js/components/repositoryUserSearch/repositoryUserSearch.html"
+                repository-type="github"
+            ></repository-user-search>
+
+            <repository-list template-url="js/components/repositoryList/repositoryList.html"
+                repository-type="github"
+            ></repository-list>
+        </div>
+
+        <!-- [lib/vendor/third party] source codes -->
+        <script type="text/javascript" src="../node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+        <script type="text/javascript" src="../node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+        <script type="text/javascript" src="../node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+        <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="../node_modules/angular-mocks/angular-mocks.js"></script>
+        <script type="text/javascript" src="../node_modules/ui-select/dist/select.min.js"></script>
+
+        <!-- [project] source codes -->
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/services/githubRepository.js"></script>
+        <script type="text/javascript" src="js/components/repositoryList/repositoryList.js"></script>
+        <script type="text/javascript" src="js/components/repositoryUserSearch/repositoryUserSearch.js"></script>
+        <script type="text/javascript" src="js/directives/repository/repository.js"></script>
+
+        <!-- [project] tests -->
+<!--         <script type="text/javascript" src="js/test/unit/directives/game.js"></script>
+        <script type="text/javascript" src="js/test/unit/directives/board.js"></script>
+        <script type="text/javascript" src="js/test/unit/directives/leaderboard.js"></script> -->
+<!--         <script type="text/javascript" src="js/test/integration.js"></script> -->
+    </body>
+</html>
