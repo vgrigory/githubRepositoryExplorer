@@ -1,5 +1,5 @@
 /**
- * We init TicTacToe module here.
+ * We init "RepositoryExplorer" module here.
  * (custom) bootstrapping of application happens in this file:
  * (loading of related resources - translation, ...).
  *
